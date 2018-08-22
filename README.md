@@ -39,8 +39,16 @@ To start a 3-node cluster:
 The output of the script is the environment variable that needs to be set to
 configure `etcdctl` to talk to the cluster.
 
+The first node has its ports published and each machine is named etcd0# (etcd01, etcd02, etc)
+
 Note: This script is meant for development or demonstration purposes only, as
 it does not build a robust cluster across multiple Docker hosts.
+
+To stop and destroy nodes or the entire cluster, simply run:
+
+    ./stop-and-destroy-cluster.sh
+    
+Ths script wil loop through all machines with the name "etcd" in it and prompt to delete and remove each one, or the entire cluster.
 
 ## Deploying etcd without Docker
 
